@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { DataProvider } from './context/DataContext';
-import UsersPage from './components/UsersPage';
+import UsersPage from './components/UserPage';
 import TrendingPage from './components/TrendingPage';
 import FeedPage from './components/FeedPage';
 
@@ -9,7 +9,7 @@ function App() {
     <DataProvider>
       <Router>
         <div className="min-vh-100">
-          {}
+
           <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container">
               <ul className="navbar-nav">
@@ -32,11 +32,11 @@ function App() {
             </div>
           </nav>
 
-          {}
+          
           <Routes>
-            <Route path="/users" element={<UsersPage />} />
+            {/* <Route path="/users" element={<UsersPage />} />
             <Route path="/trending" element={<TrendingPage />} />
-            <Route path="/feed" element={<FeedPage />} />
+            <Route path="/feed" element={<FeedPage />} /> */}
             <Route path="/" element={<FeedPage />} /> {}
           </Routes>
         </div>
