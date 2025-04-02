@@ -9,7 +9,7 @@ function App() {
     <DataProvider>
       <Router>
         <div className="min-vh-100">
-          {/* Navigation */}
+          {}
           <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container">
               <ul className="navbar-nav">

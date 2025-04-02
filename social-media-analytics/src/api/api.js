@@ -16,15 +16,15 @@ const placeholderImages = [
   '<https://via.placeholder.com/150/0000FF/FFFFFF?text=Image3>',
 ];
 
-// Function to get a random image
+
 export const getRandomImage = () => {
   return placeholderImages[Math.floor(Math.random() * placeholderImages.length)];
 };
 
-// Fetch all users
+
 export const getUsers = async () => {
   if (cache.users) {
-    return cache.users; // Return cached users if available
+    return cache.users; 
   }
   try {
     const response = await axios.get(`${BASE_URL}/users`);
@@ -36,7 +36,7 @@ export const getUsers = async () => {
   }
 };
 
-// Fetch posts for a specific user
+
 export const getPosts = async (userId) => {
   if (cache.posts[userId]) {
     return cache.posts[userId]; 
