@@ -4,13 +4,13 @@ import { getRandomImage } from '../api/api';
 const UsersPage = () => {
   const { users, posts } = useData();
 
-  
-  const userPostCounts = users.map((user) => {
-    const userPosts = posts.filter((post) => post.userid === user.id);
-    return { ...user, postCount: userPosts.length };
+  // Calculate post counts for each user
+  const userPostCounts = Object.entries(users).map(([userId, userName]) => {
+    const userPosts = posts.filter((post) => post.userid === userId);
+    return { id: userId, name: userName, postCount: userPosts.length };
   });
 
-  
+  // Sort by post count and get top 5
   const topUsers = userPostCounts
     .sort((a, b) => b.postCount - a.postCount)
     .slice(0, 5);

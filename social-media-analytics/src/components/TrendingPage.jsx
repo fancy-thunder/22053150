@@ -3,28 +3,24 @@ import { useData } from '../context/DataContext';
 import { getRandomImage } from '../api/api';
 
 const TrendingPage = () => {
-  const { posts, comments, fetchComments } = useData();
+  const { posts, users, comments, fetchComments } = useData();
 
-  
   useEffect(() => {
     posts.forEach((post) => {
       fetchComments(post.id);
     });
   }, [posts, fetchComments]);
 
-  
   const postCommentCounts = posts.map((post) => {
     const postComments = comments[post.id] || [];
     return { ...post, commentCount: postComments.length };
   });
 
-  
   const maxCommentCount = Math.max(
     ...postCommentCounts.map((post) => post.commentCount),
     0
   );
 
-  
   const trendingPosts = postCommentCounts.filter(
     (post) => post.commentCount === maxCommentCount
   );
@@ -43,6 +39,7 @@ const TrendingPage = () => {
                 style={{ width: '50px', height: '50px' }}
               />
               <div>
+                <h5 className="card-title">{users[post.userid] || 'Unknown User'}</h5>
                 <p className="card-text">{post.content}</p>
                 <p className="card-text text-muted">
                   Comments: {post.commentCount}

@@ -34,10 +34,10 @@ function App() {
 
           
           <Routes>
-            {/* <Route path="/users" element={<UsersPage />} />
+            <Route path="/users" element={<UsersPage />} />
             <Route path="/trending" element={<TrendingPage />} />
-            <Route path="/feed" element={<FeedPage />} /> */}
-            <Route path="/" element={<FeedPage />} /> {}
+            <Route path="/feed" element={<FeedPage />} />
+            <Route path="/" element={<FeedPage />} />
           </Routes>
         </div>
       </Router>
